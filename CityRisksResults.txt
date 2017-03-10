@@ -1,0 +1,34 @@
+The Percentage of Users Using the Brand Nokia is: 3.0 / 9.0 = 33.333332 % of All Users (Wed Feb 22 14:01:01 EET 2017)
+
+The Percentage of Users Using the Brand Samsung is: 4.0 / 9.0 = 44.444443 % of All Users (Wed Feb 22 14:01:17 EET 2017)
+
+The Percentage of Users Using the Brand Blackberry is: 2.0 / 9.0 = 22.222221 % of All Users (Wed Feb 22 14:02:12 EET 2017)
+
+The Percentage of Users Using the Model J11 is: 2.0 / 9.0 = 22.222221 % of All Users (Wed Feb 22 14:03:23 EET 2017)
+
+The Percentage of Users Using the Model S4 is: 2.0 / 9.0 = 22.222221 % of All Users (Wed Feb 22 14:03:36 EET 2017)
+
+The Percentage of Users Using the Model 3310 is: 3.0 / 9.0 = 33.333332 % of All Users (Wed Feb 22 14:03:48 EET 2017)
+
+The Percentage of Users Using the Model Priv is: 2.0 / 9.0 = 22.222221 % of All Users (Wed Feb 22 14:04:00 EET 2017)
+
+The Percentage of Users Using the Model J11 is: 2.0 / 9.0 = 22.222221 % of All Users (Wed Feb 22 14:07:35 EET 2017)
+
+The Percentage of Users Using the Brand iPhone is: 0.0 / 9.0 = 0.0 % of All Users (Wed Feb 22 14:13:58 EET 2017)
+
+The Percentage of Users Using the Brand Windows Phone is: 0.0 / 9.0 = 0.0 % of All Users (Wed Feb 22 14:50:03 EET 2017)
+
+The Percentage of Users Using the Brand Nokia is: 3.0 / 9.0 = 33.333332 % of All Users (Thu Feb 23 13:34:05 EET 2017)
+
+The Percentage of Users Using the Brand Samsu is: 4.0 / 9.0 = 44.444443 % of All Users (Thu Feb 23 15:41:54 EET 2017)
+
+The Percentage of Users Using the Brand J11 is: 0.0 / 9.0 = 0.0 % of All Users (Fri Feb 24 12:22:04 EET 2017)
+
+The Percentage of Users Using the Model J1 is: 2.0 / 9.0 = 22.222221 % of All Users (Fri Feb 24 12:22:31 EET 2017)
+
+The Percentage of Users Using the Model 3310 is: 3.0 / 9.0 = 33.333332 % of All Users (Fri Feb 24 15:06:28 EET 2017)
+
+The Percentage of Users Using the Model 3310 is: 3.0 / 9.0 = 33.333332 % of All Users (Fri Feb 24 15:47:12 EET 2017)
+
+The Percentage of Users Using the Model J11 is: 2.0 / 9.0 = 22.222221 % of All Users (Tue Feb 28 12:28:55 EET 2017)
+

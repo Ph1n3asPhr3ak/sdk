@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:elasticsearch="http://www.pilato.fr/schema/elasticsearch"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	                 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+	                 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	                 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	                 http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+	                 http://www.pilato.fr/schema/elasticsearch http://www.pilato.fr/schema/elasticsearch/elasticsearch-0.3.xsd
+	                 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+
+ 	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/city_risks" />
+		<property name="username" value="postgres" />
+		<property name="password" value="postgres" />
+	</bean>
+
+ 
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<!-- use cityrisk-model's persistence.xml instead of local config.-->
+		<!-- If local config is chosed, 'datasource' and 'jpaProperties' must be uncommented. -->
+		<!-- *NOTE*: persistenceUnitName is always picked up from persistence.xml (unless it is excluded from the cai-model jar) -->
+	<!--<property name="persistenceUnitName" value="cai-model" />
+		<property name="packagesToScan">
+			<list>
+				<value>eu.c_spaceproject.cai.model</value>
+			</list>
+		</property>
+		-->
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.spatial.dialect.postgis.PostgisDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">validate</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.import_files">/post_create_operations.sql</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+
+				<prop key="hibernate.cache.use_second_level_cache">false</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>
+			</props>
+		</property>
+
+ 		<property name="jpaVendorAdapter" ref="vendorAdapter" />
+	</bean>
+
+	<bean id="vendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="showSql" value="false" />
+		<property name="generateDdl" value="false" />
+		<property name="databasePlatform" value="org.hibernate.spatial.dialect.postgis.PostgisDialect" />
+	</bean>
+
+	<bean id="ServicesExceptionTranslator"
+		class="org.springframework.orm.hibernate4.HibernateExceptionTranslator" />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<context:component-scan base-package="eu.cityrisks.service"/>
+
+	<jpa:repositories base-package="eu.cityrisks.repository" />
+</beans>
